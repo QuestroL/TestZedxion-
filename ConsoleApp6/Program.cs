@@ -1,7 +1,4 @@
-﻿using System;
-
-
-try
+﻿try
 {
     var employee = new InsuranceCalculator.Employee
     {
@@ -107,13 +104,15 @@ public class InsuranceCalculator
 
         return basePremium;
     }
-    #endregion
-
 
     public static int GetDaysInYear(int year)
     {
         return DateTime.IsLeapYear(year) ? 366 : 365;
     }
+
+    #endregion
+
+    #region model
 
     public enum PricingModel
     {
@@ -171,5 +170,7 @@ public class InsuranceCalculator
             return date.Month >= 1 && date.Month <= 12 && date.Day >= 1 && date.Day <= DateTime.DaysInMonth(date.Year, date.Month);
         }
     }
+
+    #endregion
 }
 
